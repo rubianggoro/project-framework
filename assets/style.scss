@@ -1,0 +1,55 @@
+$primary-color : rgb(14, 45, 184);
+$text-color : rgb(85, 87, 85);
+
+%font-syle {
+    font-size: 30px;
+    color: rgb(56, 56, 56);
+    font-weight: bold;
+}
+
+@mixin screen ($color, $weight) {
+    color: $color;
+    font-weight: $weight;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    border-bottom: 2px solid $text-color;
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                margin-right: 25px;
+                @include screen($text-color, bold)
+            }
+            a:hover {
+                background-color: $text-color;
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    img {
+        position: absolute;
+    }
+    h2 {
+        position: relative;
+        @extend %font-syle;
+        margin-top: 280px;
+    }
+}
+
